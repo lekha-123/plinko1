@@ -1,13 +1,13 @@
-class ground
+class ball
 {
-    constructor(x,y,width,height)
+    constructor(x,y,r)
     {var options={
         
         isStatic:true
     }
-        this.width=width;
-        this.height=height;
-        this.body=Bodies.rectangle(x,y,width,height,options);
+        this.r=r
+        this.image=loadImage("polygon.png")
+        this.body=Bodies.circle(x,y,width,height,options);
         World.add(world,this.body);
     }
     display()
@@ -17,8 +17,8 @@ class ground
         push();
     translate (pos.x,pos.y);
     rotate (angle);
-    rectMode(CENTER);
-    rect(0,0,this.width,this.height);
+    imageMode(CENTER);
+   image(this.image,0,0,this.r);
     pop ();
     }
 }
